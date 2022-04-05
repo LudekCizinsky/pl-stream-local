@@ -1,6 +1,7 @@
 import random
 import copy
 import re
+import sys
 import numpy as np
 np.warnings.filterwarnings('ignore', category=np.VisibleDeprecationWarning)
 
@@ -390,7 +391,7 @@ if __name__ == '__main__':
     
     print('-- Setting up the job')
     env = StreamExecutionEnvironment.get_execution_environment()
-    env.set_python_executable("/Library/Frameworks/Python.framework/Versions/3.8/bin/python3")
+    env.set_python_executable(sys.argv[1])
     env.set_parallelism(1)
     env.get_checkpoint_config().set_checkpointing_mode(CheckpointingMode.EXACTLY_ONCE)
 

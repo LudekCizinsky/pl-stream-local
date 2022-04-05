@@ -74,7 +74,7 @@ Finally, you can run the code and get reviews with corresponding label:
 
 ```bash
 cd src
-python PLStream.py
+plreview
 ```
 
 The output is stored in the folder called `output` present within the `src`
@@ -99,14 +99,13 @@ square brackets):
 cat [name_of_the_raw_file] | tr "@@@@" "\n" > result.out
 ```
 
-
 #### Get accuracy
 You can check how accuracy of the model evolves as you input more data by
 running the following:
 
 ```bash
 cd src
-python PLStream_acc.py
+placc
 ```
 
 To check the output, follow the similar steps as in the previous section.
