@@ -91,6 +91,15 @@ created most recently you can check the output by for example using `head`.
 As mentioned in the original docs:
 >  The outputs' form is "original text" + "label" + "@@@@". With help of a split("@@@@") function we can further reorganize the labelled dataset.
 
+So for example, you can run the following command to get the result in a nice
+form to the file called `result.out` (make sure you replace the variable in
+square brackets):
+
+```bash
+cat [name_of_the_raw_file] | tr "@@@@" "\n" > result.out
+```
+
+
 #### Get accuracy
 You can check how accuracy of the model evolves as you input more data by
 running the following:
@@ -101,6 +110,14 @@ python PLStream_acc.py
 ```
 
 To check the output, follow the similar steps as in the previous section.
+
+## Todo
+
+Here are the possible improvements:
+
+- [ ] Add better logging including time it takes to execute particular parts
+- [ ] Figure out how to better save the results - better naming of the files
+- [ ] Figure out how to use all available cores 
 
 ## Bug report
 If you have encountered any problem, please report an issue.
