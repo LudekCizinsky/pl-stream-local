@@ -68,6 +68,10 @@ Before execution of the scripts, please run `redis` in a separate terminal windo
 ```bash
 redis-server
 ```
+You might need to install it seperately with
+```bash
+brew install redis
+```
 
 #### Get text with predictions
 Finally, you can run the code and get reviews with corresponding label:
@@ -75,6 +79,11 @@ Finally, you can run the code and get reviews with corresponding label:
 ```bash
 cd src
 plreview
+```
+If you get an error with `nltk` run the python interpreter and run:
+```
+import nltk
+nltk.download('stopwords')
 ```
 
 The output is stored in the folder called `output` present within the `src`
