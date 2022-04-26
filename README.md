@@ -29,20 +29,53 @@ brew install apache-flink
 ```
 
 #### Java V8
-Check if you have `Java v8` installed:
+Check if you have `Java v8` installed (Java 18 was
+tested and is not compatible with Apache Flink)
 
 ```bash
 java --version
 ```
 
+Some Java versions use `java -version` to query
+the version of the runtime environment.
+
 If not, then you can install it according to this [tutorial](https://docs.oracle.com/javase/8/docs/technotes/guides/install/mac_jdk.html).
 
+If you already have a Java environment installed,
+but in the wrong version, then you need to switch
+the default RTE used. First check all current Java
+environments installed by running:
 
-#### Python >3.7
-Again, check if you have python installed with at least version 3.7:
+```
+/usr/libexec/java_home -V
+```
+
+Here you should have a Java version `1.8` or `8`
+installed. Go into your shell config file
+(`.zshrc`/ `.bashrc`) and set the global
+`JAVA_HOME` environment variable by adding this
+line into the config file.
+
+```
+export JAVA_HOME=$(/usr/libexec/java_home -v 1.8)
+```
+
+Exit the file and source the changes `source
+.zshrc` (in the case of `zsh` as default shell).
+Now running `java --version` (or `java -version`
+should return the version specified in the config
+file.
+
+#### Python==3.7
+Again, check if you have python installed with at
+version 3.7 (both lower and higher version might
+not be compatible) It is recommended to create
+a virtual env with this Python version. This is an
+example in conda.
 
 ```bash
-python --version
+conda env create python=3.7
+pip install -r requirements.txt
 ```
 
 If not, you can follow the official [docs](https://www.python.org/downloads/) to install it.
