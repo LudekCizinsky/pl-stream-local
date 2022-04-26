@@ -6,4 +6,4 @@ pyflink==1.0
 redis==4.1.2
 redis-server==6.0.9
 scikit-learn==1.0.2
-numpy==1.22.2
+numpy==1.19.5
